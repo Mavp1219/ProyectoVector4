@@ -226,8 +226,8 @@ public class prncipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdllenadoautomaticoActionPerformed
 
     private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
-        int longitud, p = 0;
-        longitud = Integer.parseInt(txtlongitud.getText());
+        int longitud, p=0;
+        longitud=Integer.parseInt(txtlongitud.getText());
         double numero;
         double r[] = new double [longitud];
         for (int i = 0; i <v.length; i++) {
@@ -238,11 +238,11 @@ public class prncipal extends javax.swing.JFrame {
                 }
             }
         }
-        numero = 0;
+        numero=0;
         for (int i = 0; i <v.length; i++) {
             if(numero < r[i]){
                 numero = r[i];
-                p = i;
+                p=i;
             }
         }
         txtresultado2.setText(v[p] + "");
