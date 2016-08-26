@@ -20,6 +20,10 @@ public class prncipal extends javax.swing.JFrame {
 
     public prncipal() {
         initComponents();
+        cmdcalcular.setEnabled(false);
+        cmdllenadoautomatico.setEnabled(false);
+        cmdllenadomanual.setEnabled(false);
+        cmdborrar.setEnabled(false);
     }
 
     /**
@@ -177,6 +181,12 @@ public class prncipal extends javax.swing.JFrame {
             longitud = Integer.parseInt(txtlongitud.getText());
             v = new double[longitud];
             JOptionPane.showMessageDialog(this, "Vector creado correctamente");
+            cmdcrear.setEnabled(false);
+            cmdllenadomanual.setEnabled(true);
+            cmdllenadoautomatico.setEnabled(true);
+            cmdborrar.setEnabled(true);
+            txtlongitud.setEnabled(false);
+            cmdcalcular.setEnabled(false);
         }
     }//GEN-LAST:event_cmdcrearActionPerformed
 
@@ -189,6 +199,12 @@ public class prncipal extends javax.swing.JFrame {
         for (int i = 0; i < v.length; i++) {
             txtresultado1.append(v[i] + "\n");
         }
+        cmdcrear.setEnabled(false);
+        cmdllenadomanual.setEnabled(false);
+        cmdllenadoautomatico.setEnabled(false);
+        cmdcalcular.setEnabled(true);
+        cmdborrar.setEnabled(true);
+        txtlongitud.setEditable(false);
     }//GEN-LAST:event_cmdllenadomanualActionPerformed
 
     private void cmdllenadoautomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdllenadoautomaticoActionPerformed
@@ -200,6 +216,12 @@ public class prncipal extends javax.swing.JFrame {
         for (int i = 0; i <v.length; i++) {
             txtresultado1.append(v[i] + "\n");
         }
+        cmdcrear.setEnabled(false);
+        cmdllenadomanual.setEnabled(false);
+        cmdllenadoautomatico.setEnabled(false);
+        cmdcalcular.setEnabled(true);
+        cmdborrar.setEnabled(true);
+        txtlongitud.setEditable(false);
     }//GEN-LAST:event_cmdllenadoautomaticoActionPerformed
 
     private void cmdcalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdcalcularActionPerformed
@@ -226,11 +248,18 @@ public class prncipal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdcalcularActionPerformed
 
     private void cmdborrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdborrarActionPerformed
-         v = null;
+       txtresultado1.setText("");
+       txtresultado2.setText("");
         txtlongitud.setText("");
-        txtresultado1.setText("");
-        txtresultado2.setText("");
         txtlongitud.requestFocusInWindow();
+        v = null;
+        cmdcrear.setEnabled(true);
+        cmdllenadomanual.setEnabled(false);
+        cmdllenadoautomatico.setEnabled(false);
+        cmdcalcular.setEnabled(false);
+        cmdborrar.setEnabled(true);
+        txtlongitud.setEnabled(true);
+        txtlongitud.setEditable(true);
     }//GEN-LAST:event_cmdborrarActionPerformed
 
     /**
